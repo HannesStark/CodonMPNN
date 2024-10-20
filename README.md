@@ -1,6 +1,6 @@
 # CodonMPNN for Organism Specific and Codon Optimal Inverse Folding
 
-### [Paper Link (to come)](XXX)
+### [Paper Link]([XXX](https://arxiv.org/abs/2409.17265))
 
 CodonMPNN is similar to ProteinMPNN but produces a codon sequences instead of an amino acid sequence and it is conditioned on a specific organism (the organism conditioning is optional).
 The current version has been trained on Monomers from the AlphaFold database. 
