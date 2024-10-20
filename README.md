@@ -22,7 +22,22 @@ pip install modelcif foldcomp tmtools  omegaconf rdkit-pypi imageio matplotlib p
 ```
 
 # Training
-A toy dataset is in `afdb_small` to run the code on. CodonMPNN was trained on a FoldSeek clustered version of AFDB.
+A toy dataset is in `afdb_small` to run the code on. CodonMPNN was trained on a MMSeqs clustered version of AFDB.
+
+[Here](https://publbuck.s3.us-east-2.amazonaws.com/afdb_with_groupings.csv) is a link to download the .csv file for the whole training validation and test data.
+It contains AFDB ids for representatives of mmseqs clusters with a maximum 30% sequence identity. The train, val, test split is a random split.
+
+Unfortunately, I cannot upload all the .pdb files somewhere due to the dataset size. You can download the pdb files from AFDB using their api and code similar to this:
+
+```
+import requests
+url = f"https://alphafold.ebi.ac.uk/files/{afdb_id}.pdb"
+response = requests.get(url)
+
+if response.status_code == 200:
+    with open(f'{afdb_id}.pdb', 'wb') as pdb_file:
+        pdb_file.write(response.content)
+```
 
 # Inference
 We provide the weights here.
